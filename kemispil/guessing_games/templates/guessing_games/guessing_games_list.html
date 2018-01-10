@@ -5,5 +5,19 @@
 {% block content %}
 <div class="container">
     <h1 class="text-center text-white display-4">Vendespil</h1>
+
+    <div class="row mt-5 justify-content-center">
+        {% for game in guessing_game %}
+        <div class="col-10 col-md-4 card m-3">
+            <div class="card-header text-center lead font-weight-bold">{{ game.game_title }}</div>
+            <div class="card-body">
+                <p class="text-success">{{ game.game_description }}</p>
+            </div>
+            <div>
+                <a href="#" class="btn btn-success btn-block mb-3">Spil</a>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
 </div>
 {% endblock %}
