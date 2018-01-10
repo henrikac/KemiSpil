@@ -13,6 +13,7 @@ class GuessingGame(models.Model):
 
 
 class GameItem(models.Model):
+    guessing_game = models.ForeignKey(GuessingGame, on_delete=models.CASCADE, default=GuessingGame)
     item_key = models.CharField(max_length=50)
     item_value = models.CharField(max_length=50)
 
