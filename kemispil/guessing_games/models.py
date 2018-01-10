@@ -7,13 +7,14 @@ class GuessingGame(models.Model):
 
     class Meta:
         ordering = ['game_title']
+        verbose_name_plural = 'Vendespil'
 
     def __str__(self):
         return 'Game: {}'.format(self.game_title)
 
 
 class GameItem(models.Model):
-    guessing_game = models.ForeignKey(GuessingGame, on_delete=models.CASCADE, default=GuessingGame)
+    guessing_game = models.ForeignKey(GuessingGame, on_delete=models.CASCADE)
     item_key = models.CharField(max_length=50)
     item_value = models.CharField(max_length=50)
 
