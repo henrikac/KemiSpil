@@ -14,7 +14,7 @@
                 <p class="text-success">{{ game.game_description }}</p>
             </div>
             <div>
-                <a href="#" class="btn btn-success btn-block mb-3">Spil</a>
+                <a href="{% url 'guessing_games:levels' topic=game.url_title %}" class="btn btn-success btn-block mb-3">Spil</a>
             </div>
         </div>
         {% endfor %}

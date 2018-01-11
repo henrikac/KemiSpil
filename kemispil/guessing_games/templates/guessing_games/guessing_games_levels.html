@@ -1,0 +1,16 @@
+{% extends '_layout.html' %}
+
+{% block title %}{{ title|capfirst }} levels {{ block.super }}{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h1 class="text-center text-white display-4 mb-5">{{ title|capfirst }}</h1>
+    {% for level in levels %}
+    <div class="row justify-content-center border w-75 mx-auto py-3 mt-3">
+        <p class="col-12 text-center text-white lead font-weight-bold">Level {{ level }}</p>
+        <a href="#" class="btn btn-primary col-10 col-md-3 m-3">Gæt navne</a>
+        <a href="#" class="btn btn-primary col-10 col-md-3 m-3">Gæt formler</a>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}
