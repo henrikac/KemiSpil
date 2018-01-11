@@ -1,0 +1,21 @@
+{% extends '_layout.html' %}
+{% load static from staticfiles %}
+
+{% block javascript %}
+<script type="text/javascript">
+    const params = [{{ level }}, "{{ what_to_guess }}"];
+    const alkanes = {{ items|safe }};
+</script>
+<script type="text/javascript" src="{% static 'js/guessing_game.js' %}"></script>
+{% endblock %}
+
+{% block title %}Gæt {{ what_to_guess }} {{ block.super }}{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h2 id="scoreFrame" class="col-12 text-center text-white display-4 mt-4">Score: <span id="score">0</span></h2>
+    <div id="gameFrame" class="row justify-content-center mt-3">
+
+    </div>
+</div>
+{% endblock %}
