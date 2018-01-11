@@ -4,6 +4,7 @@ from django.db import models
 class GuessingGame(models.Model):
     game_title = models.CharField(max_length=50)
     game_description = models.TextField()
+    url_title = models.CharField(max_length=25, default='')
 
     class Meta:
         ordering = ['game_title']
