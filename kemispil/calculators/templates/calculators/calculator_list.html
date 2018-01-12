@@ -1,0 +1,23 @@
+{% extends '_layout.html' %}
+
+{% block title %}Lommeregnere {{ block.super }}{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h1 class="text-center text-white display-4">Lommeregnere</h1>
+
+    <div class="row mt-5 justify-content-center">
+        {% for calculator in calculators %}
+        <div class="col-10 col-md-4 card m-3">
+            <div class="card-header text-center lead font-weight-bold">{{ calculator.title }}</div>
+            <div class="card-body">
+                <p class="text-success">{{ calculator.description }}</p>
+            </div>
+            <div>
+                <a href="#" class="btn btn-success btn-block mb-3">Start</a>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}
