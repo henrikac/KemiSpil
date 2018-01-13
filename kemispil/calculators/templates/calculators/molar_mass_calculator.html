@@ -1,0 +1,53 @@
+{% extends '_layout.html' %}
+{% load static from staticfiles %}
+
+{% block javascript %}
+<script type="text/javascript" src="{% static 'js/calculators/molar_mass.js' %}"></script>
+{% endblock %}
+
+{% block title %}{{ molar_mass.title }} {{ block.super }}{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h1 class="text-center text-white display-4">{{ molar_mass.title }}</h1>
+
+    <div id="calculator">
+        <div class="inline-block text-center mt-5">
+            <input type="text" id="insertThis">
+            <input type="button" id="insertNow" value="Indsæt">
+
+            <div class="w-50 mt-5 mx-auto">
+                <table class="table table-bordered bg-primary">
+                    <thead>
+                        <tr>
+                            <th scope="col"></th>
+                            <th scope="col" id="molarTitle">-----</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">n:</th>
+                            <td><input type="text" id="n" value=""></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">m:</th>
+                            <td><input type="text" id="m" value=""></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">M:</th>
+                            <td><input type="text" id="M" value=""></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <button class="btn-btn-default btn-block" id="calc">Beregn</button>
+
+                <ul class="list-unstyled text-left mt-3">
+                    {% for description in field_descriptions %}
+                    <li><small><em>{{ description }}</em></small></li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

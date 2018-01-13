@@ -14,7 +14,7 @@
                 <p class="text-success">{{ calculator.description }}</p>
             </div>
             <div>
-                <a href="#" class="btn btn-success btn-block mb-3">Start</a>
+                <a href="{{ calculator.get_absolute_url }}" class="btn btn-success btn-block mb-3">Start</a>
             </div>
         </div>
         {% endfor %}

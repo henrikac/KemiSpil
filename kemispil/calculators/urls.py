@@ -4,5 +4,6 @@ from . import views
 
 app_name = 'calculators'
 urlpatterns = [
-    path('udregnere/', views.CalculatorListView.as_view(), name='calculator_list'),
+    path('lommeregnere/molarmasse/', views.molar_mass_calculator, name='calculator'),
+    path('lommeregnere//', views.CalculatorListView.as_view(), name='calculator_list'),
 ]
