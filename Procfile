@@ -1,0 +1,1 @@
+web: gunicorn --pythonpath kemispil kemispil.wsgi --log-file -
