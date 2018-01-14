@@ -7,8 +7,12 @@ TEMPLATE_DEBUG = DEBUG
 
 ALLOWED_HOSTS = [
     'localhost',
-    '.herokuapp.com'
+    'kemispil.herokuapp.com'
 ]
+
+INSTALLED_APPS += (
+    'gunicorn',
+)
 
 SECRET_KEY = get_env_variable("SECRET_KEY")
 
