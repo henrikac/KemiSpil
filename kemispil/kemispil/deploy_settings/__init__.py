@@ -2,8 +2,6 @@ import dj_database_url
 
 from kemispil.settings import *
 
-print("deploy_settings used")
-
 DEBUG = False
 TEMPLATE_DEBUG = DEBUG
 
