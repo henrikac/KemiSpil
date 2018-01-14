@@ -1,1 +1,1 @@
-web: gunicorn --pythonpath kemispil kemispil.deploy --log-file -
+web: python feelings/manage.py collectstatic --settings=feelings.deploy_settings && gunicorn --pythonpath kemispil kemispil.deploy --log-file -

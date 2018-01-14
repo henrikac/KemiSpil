@@ -3,7 +3,6 @@ import dj_database_url
 from kemispil.settings import *
 
 DEBUG = False
-TEMPLATE_DEBUG = DEBUG
 
 ALLOWED_HOSTS = [
     'localhost',
