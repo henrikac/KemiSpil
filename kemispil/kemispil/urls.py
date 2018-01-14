@@ -20,7 +20,7 @@ from . import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('calculators.urls', namespace='calculators')),
-    path('', include('guessing_games.urls', namespace='guessing_games')),
+    path('lommeregnere/', include('calculators.urls', namespace='calculators')),
+    path('vendespil/', include('guessing_games.urls', namespace='guessing_games')),
     path('', views.home, name='home'),
 ]
