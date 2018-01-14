@@ -5,5 +5,5 @@ TEMPLATE_DEBUG = DEBUG
 
 ALLOWED_HOSTS = [
     'localhost',
-    '.heroku.com'
+    '.herokuapp.com'
 ]
