@@ -1,4 +1,4 @@
-from kemispil.kemispil.settings import *
+from kemispil.settings import *
 
 DEBUG = False
 TEMPLATE_DEBUG = DEBUG
