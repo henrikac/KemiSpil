@@ -1,1 +1,1 @@
-web: gunicorn --pythonpath kemispil kemispil.deploy --log-file -
+web: gunicorn --pythonpath /app/kemispil kemispil.deploy --log-file -
