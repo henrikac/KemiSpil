@@ -6,7 +6,8 @@ DEBUG = False
 
 ALLOWED_HOSTS = [
     'localhost',
-    '.herokuapp.com'
+    '.herokuapp.com',
+    'kemispil.henrikac.com'
 ]
 
 INSTALLED_APPS += (
