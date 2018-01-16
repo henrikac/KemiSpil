@@ -7,7 +7,7 @@ from . import models
 def molar_mass_calculator(request):
     molar_mass = get_object_or_404(models.Calculator, url_title='molarmasse')
     field_descriptions = [
-        'n = mol stofmængde',
+        'n = mol stofmængde (antal mol)',
         'm = masse i gram',
         'M = molarmasse (g/mol)'
     ]

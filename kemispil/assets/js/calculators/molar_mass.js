@@ -118,7 +118,6 @@ const atoms = [
 $('#insertNow').on('click', function() {
     const userInput = $('#insertThis').val();
     const userInputArr = userInput.split('');
-    // console.log(userInputArr);
 
     let atomArr = [];
 
@@ -132,16 +131,19 @@ $('#insertNow').on('click', function() {
         }
 
         if (parseInt(userInputArr[i+1])) {
-            item += userInputArr[i+1];
-            i++;
+            while (true) {
+                item += userInputArr[i+1];
+                console.log(userInputArr[i+1] + ' added');
+                i++;
+                if (!parseInt(userInputArr[i+1])) {
+                    console.log('No more ints');
+                    break;
+                }
+            }
         }
         
         atomArr.push(item);        
     }
-
-    // console.log(atomArr);
-    // console.log(userInputArr[userInputArr.length-1]);
-    // console.log('--------------------------');
 
     let atomWeightArr = [];
 
@@ -152,8 +154,15 @@ $('#insertNow').on('click', function() {
         let atom = atomArr[i];
 
         if (parseInt(atomArr[i][atomArr[i].length-1])) {
-            multiplier = atom[atom.length-1];
-            atom = atom.slice(0, -1);
+            let numberOfIntegers = 0;
+            for (let k = 0; k < atomArr[i].length; k++) {
+                if (parseInt(atomArr[i][k])) {
+                    numberOfIntegers += 1;
+                }
+            }
+
+            multiplier = atom.slice(-numberOfIntegers);
+            atom = atom.slice(0, -numberOfIntegers);
         }
 
         for (let j = 0; j < atoms.length; j++) {
@@ -164,16 +173,12 @@ $('#insertNow').on('click', function() {
         }
     }
 
-    // console.log(atomWeightArr);
-
     let molarMass = 0;
 
     // adding the weight of all the atoms entered by the user together
     for (let i = 0; i < atomWeightArr.length; i++) {
         molarMass += atomWeightArr[i];
     }
-
-    // console.log(molarMass);
 
     let molarMassTitle = '';
 
@@ -203,4 +208,12 @@ $('#calc').on('click', function() {
     } else if (n && n) {
         $('#M').val(m / n);
     }
+});
+
+$('#reset').on('click', function() {
+    $('#insertThis').val('');
+    $('#molarTitle').text('-----');
+    $('#n').val('');
+    $('#m').val('');
+    $('#M').val('');
 });
