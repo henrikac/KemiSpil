@@ -133,10 +133,8 @@ $('#insertNow').on('click', function() {
         if (parseInt(userInputArr[i+1])) {
             while (true) {
                 item += userInputArr[i+1];
-                console.log(userInputArr[i+1] + ' added');
                 i++;
                 if (!parseInt(userInputArr[i+1])) {
-                    console.log('No more ints');
                     break;
                 }
             }
