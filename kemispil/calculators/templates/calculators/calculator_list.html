@@ -8,10 +8,10 @@
 
     <div class="row mt-5 justify-content-center">
         {% for calculator in calculators %}
-        <div class="col-10 col-md-4 card m-3">
+        <div class="col-10 col-sm-8 col-md-5 col-lg-4 card m-3">
             <div class="card-header text-center lead font-weight-bold">{{ calculator.title }}</div>
             <div class="card-body">
-                <p class="text-success">{{ calculator.description }}</p>
+                <p class="text-success lead">{{ calculator.description }}</p>
             </div>
             <div>
                 <a href="{{ calculator.get_absolute_url }}" class="btn btn-success btn-block mb-3">Start</a>

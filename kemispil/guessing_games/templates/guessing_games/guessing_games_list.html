@@ -8,10 +8,10 @@
 
     <div class="row mt-5 justify-content-center">
         {% for game in guessing_game %}
-        <div class="col-10 col-md-4 card m-3">
+        <div class="col-10 col-sm-8 col-md-5 col-lg-4 card m-3">
             <div class="card-header text-center lead font-weight-bold">{{ game.game_title }}</div>
             <div class="card-body">
-                <p class="text-success">{{ game.game_description|linebreaksbr }}</p>
+                <p class="text-success lead">{{ game.game_description|linebreaksbr }}</p>
             </div>
             <div>
                 <a href="{% url 'guessing_games:levels' topic=game.url_title %}" class="btn btn-success btn-block mb-3">Spil</a>
